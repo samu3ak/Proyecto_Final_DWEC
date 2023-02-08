@@ -9,6 +9,7 @@
         <%=tituloWeb%>
     </title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <%var home="" ,usuarios="" ; switch(tituloWeb){ case "Inicio" : home="active" ; break; case "Usuarios" :
@@ -25,15 +26,15 @@
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link <%=home%>" aria-current="page" href="/">Home</a>
+                            <a class="nav-link <%=home%>" aria-current="page" href="/">Inicio</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link <%=usuarios%>" href="/users">Usuarios</a>
                         </li>
                     </ul>
                     <form class="d-flex gap-3">
-                        <button class="btn btn-outline-light" type="submit">Iniciar Sesión</button>
-                        <button class="btn btn-outline-light" type="submit">Registrarse</button>
+                        <a class="btn btn-outline-light">Iniciar Sesión</a>
+                        <a class="btn btn-outline-light">Registrarse</a>
                     </form>
                 </div>
             </div>
