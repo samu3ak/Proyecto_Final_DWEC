@@ -1,10 +1,14 @@
-<%- include("template/header.ejs", {tituloWeb:"Usuarios" })%>
+<%- include("template/head.ejs", {tituloWeb:"Usuarios"})%>
+    </head>
 
-    <div class="container-fluid p-5">
-        <h1 class="display-1">Usuarios</h1>
-        <h1 class="display-6">
-            <%=title%>
-        </h1>
-    </div>
+    <body>
+        <%- include("template/header.ejs", {tituloWeb:"Usuarios"})%>
 
-    <%- include("template/footer.ejs")%>
+            <div class="container-fluid p-5">
+                <h1 class="display-1">Usuarios</h1>
+                <h1 class="display-6">
+                    <%=title%>
+                </h1>
+            </div>
+
+            <%- include("template/footer.ejs")%>
