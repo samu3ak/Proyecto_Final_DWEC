@@ -12,7 +12,7 @@ exports.user_login_post = async (req, res) => {
         if (usuarioEncontrado !== null) {
             res.redirect("/");
         } else {
-            res.render("login", { tituloWeb: "Inicio de sesión", error: true });
+            res.render("login", { tituloWeb: "Inicio de sesión fallido", error: true });
         }
     } catch (error) {
         console.log(error);
