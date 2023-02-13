@@ -1,8 +1,13 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", function (req, res) {
-    res.render("register", { tituloWeb: "Registro de usuario" });
-});
+// Require de los controladores de register
+const registerController = require("../controllers/registerController");
+
+// GET de la página register
+router.get("/", registerController.index);
+
+// POST request para registrar un nuevo usuario
+router.post("/", registerController.user_register_post);
 
 module.exports = router;

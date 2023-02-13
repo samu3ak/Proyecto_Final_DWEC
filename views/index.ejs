@@ -1,15 +1,63 @@
 <%- include("template/head.ejs", {tituloWeb:"Inicio"})%>
     </head>
 
-    <body>
+    <body class="principal">
 
         <%- include("template/header.ejs", {tituloWeb:"Inicio"})%>
+            <main class="container-fluid">
+                <div class="container-fluid p-5">
+                    <h1 class="display-1">KOJIMA PRODUCTIONS. <br>Creado por Kojima. Parido por Kojima</h1>
+                    <h1 class="display-6">
+                        <%=title%>
+                    </h1>
+                </div>
+                <div class="otro">
+                    <div class="row justify-content-around ">
+                        <div class="col-6 text-center bg-secondary rounded">
+                            <table class="table ">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Responsable</th>
+                                        <th scope="col">Tipo</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
 
-            <div class="container-fluid p-5">
-                <h1 class="display-1">Hola Mundo</h1>
-                <h1 class="display-6">
-                    <%=title%>
-                </h1>
-            </div>
+                                <tbody>
 
+                                    <!--Haremos el foreach para recorrer el array-->
+
+                                    <tr>
+                                        <th scope="row">
+
+                                            Aqui
+                                        </th>
+                                        <td>
+                                            ddddd
+                                        </td>
+                                        <td>
+                                            sssss
+                                        </td>
+                                        <td>
+                                            ssssss
+                                        </td>
+
+
+                                        <td>
+                                            <a class="btn btn-warning btn-sm" href="/login>">Editar/Eliminar</a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-7 justify-content-around">
+                            <a class="btn btn-dark btn-block my-4 float-end" href="/">Volver</a>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
             <%- include("template/footer.ejs")%>

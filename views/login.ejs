@@ -2,13 +2,12 @@
     <link rel="stylesheet" href="css/login.css">
     </head>
 
-    <body>
-        <%- include("template/header.ejs")%>
+    <body class="login">
+        <main class="container-fluid mainlogin">
 
             <div class="container-fluid">
                 <div class="row justify-content-center containerFormat">
-                    <form action="/login" class="rounded bg-primary p-4 text-white loginFormat align-self-center"
-                        method="POST">
+                    <form action="/login" class="rounded bg-dark p-4 text-white loginFormat align-self-center" method="POST">
                         <div class="mt-2 text-center">
                             <h1 class="display-6">Iniciar Sesión</h1>
                         </div>
@@ -31,5 +30,5 @@
                     </form>
                 </div>
             </div>
-
-            <%- include("template/footer.ejs")%>
+        </main>
+        <%- include("template/footer.ejs")%>
