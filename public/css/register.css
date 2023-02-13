@@ -1,12 +1,12 @@
-.containerFormat{
+.containerFormat {
     height: 800px;
 }
 
-.loginFormat{
+.registerFormat {
     width: 600px;
-    height: 550px;
+    height: 650px;
 }
 
-.buttonFormat{
+.buttonFormat {
     width: 200px;
 }
