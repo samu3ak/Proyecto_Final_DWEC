@@ -6,10 +6,7 @@ const userSchema = new Schema({
     nombre: String,
     apellidos: String,
     password: String,
-    rol: {
-        type: String,
-        enum: ["Alumno", "Profesor"],
-    },
+    rol: String
 });
 
 // Creación del modelo
