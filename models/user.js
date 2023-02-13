@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 // Declaración del modelo y sus datos
 const userSchema = new Schema({
     nombre: String,
+    nombreReal: String,
     apellidos: String,
     password: String,
     rol: String

@@ -18,9 +18,14 @@
                                 placeholder="Elige tu nombre de usuario" name="nombre">
                         </div>
                         <div class="mb-3 pt-4 ps-5 pe-5">
-                            <label for="username" class="form-label">Apellidos</label>
-                            <input type="text" class="form-control" id="apellidos"
-                                placeholder="Escribe tus apellidos" name="apellidos">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" placeholder="Escribe tu nombre"
+                                name="nombreReal">
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="apellidos" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" id="apellidos" placeholder="Escribe tus apellidos"
+                                name="apellidos">
                         </div>
                         <div class="mb-3 pt-4 ps-5 pe-5">
                             <label for="exampleInputPassword1" class="form-label">Contraseña</label>
@@ -35,7 +40,10 @@
                             </select>
                         </div>
                         <div class="row justify-content-center">
-                            <button type="submit" class="btn btn-success mt-5 buttonFormat">Completar registro</button>
+                            <button type="submit" class="btn btn-success mt-2 buttonFormat">Completar registro</button>
+                            <%if (error){%>
+                                <p class="text-center mt-3 p-1 bg-danger">Rellena los campos necesarios/Ese nombre de usuario ya existe</p>
+                                <%}%>
                         </div>
                     </form>
                 </div>

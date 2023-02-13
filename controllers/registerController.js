@@ -8,8 +8,9 @@ exports.user_register_post = async (req, res) => {
     // Recuperamos los datos del formulario
     let body = req.body;
     try {
+        const mismoNombre = await Usuario.findOne({ nombre: `${body.nombre}` });
         // Validación de campos
-        if (body.nombre != "" && body.apellidos != "" && body.password != "") {
+        if (mismoNombre === null && (body.nombre != "" && body.nombreReal != "" && body.apellidos != "" && body.password != "")) {
             let nuevoUsuario = new Usuario(body);
             await nuevoUsuario.save();
             res.render("register", { tituloWeb: "Registro de usuario satisfactorio", error: false, success: true });
