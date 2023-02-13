@@ -5,7 +5,11 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     nombre: String,
     apellidos: String,
-    password: String
+    password: String,
+    rol: {
+        type: String,
+        enum: ["Alumno", "Profesor"],
+    },
 });
 
 // Creación del modelo
