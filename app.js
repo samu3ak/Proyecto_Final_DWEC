@@ -3,6 +3,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+require("dotenv").config();
+
+// Conexión a la Base De Datos
+var mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.4hlujgn.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`; //URL de conexión, que completaremos luego
+mongoose.connect(uri,
+  { useNewUrlParser: true, useUnifiedTopology: true }
+)
+  .then(() => console.log('Base de datos conectada'))
+  .catch(e => console.log(e))
+
+
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
