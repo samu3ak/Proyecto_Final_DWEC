@@ -4,14 +4,14 @@
     <body class="contabilidad">
         <%- include("template/header.ejs", {tituloWeb:"Contabilidad"})%>
 
-        <main class="container-fluid mainwallet">
-            <div class="container-fluid p-5">
-                <h1 class="display-1">Gastos</h1>
-                <h1 class="display-6">
-                    <%=title%>
-                </h1>
-            </div>
-           
+            <main class="container-fluid mainwallet">
+                <div class="container-fluid p-5">
+                    <h1 class="display-1">Gastos</h1>
+                    <h1 class="display-6">
+                        <%=title%>
+                    </h1>
+                </div>
+
                 <div class="row justify-content-around ">
                     <div class="col-6 text-center bg-secondary rounded">
                         <table class="table ">
@@ -49,20 +49,22 @@
                                     <td>
                                         <a class="btn btn-warning btn-sm" href="/login>">Editar/Eliminar</a>
                                     </td>
-                                    
-                                    
+
+
                                 </tr>
 
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-7 justify-content-around">
-                        <a class="btn btn-dark btn-block my-4 float-Start" href="/">Nuevo Gasto</a>
-                        <a class="btn btn-dark btn-block my-4 float-end" href="/">Volver</a>
+                    <div class="col-7 text-center">
+                        <%if (usuario.rol=="Profesor" ){%>
+                            <a class="btn btn-dark btn-block my-4 me-5" href="/">Nuevo Gasto</a>
+                            <%}%>
+                                <a class="btn btn-dark btn-block my-4" href="/">Volver</a>
                     </div>
                 </div>
-            
 
-        </main>
+
+            </main>
 
             <%- include("template/footer.ejs")%>

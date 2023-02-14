@@ -14,46 +14,51 @@
                 <div class="otro">
                     <div class="row justify-content-around">
                         <div class="col-6 text-center bg-secondary rounded">
-                            <table class="table ">
+                            <table class="table">
                                 <thead class="thead-dark">
                                     <tr>
                                         <th scope="col">Nombre de usuario</th>
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Apellidos</th>
                                         <th scope="col">Rol</th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
+                                        <%if (usuario.rol=="Profesor" ){%>
+                                            <th scope="col">Acción</th>
+                                            <%}%>
                                     </tr>
                                 </thead>
 
                                 <tbody class="border-bottom border-dark">
 
                                     <!--Haremos el foreach para recorrer el array-->
-                                    <% arrayUsuarios.forEach(usuario=> { %>
+                                    <% arrayUsuarios.forEach(usuarios=> { %>
                                         <tr>
                                             <td>
-                                                <%= usuario.nombre %>
+                                                <%= usuarios.nombre %>
                                             </td>
                                             <td>
-                                                <%= usuario.nombreReal %>
+                                                <%= usuarios.nombreReal %>
                                             </td>
                                             <td>
-                                                <%= usuario.apellidos %>
+                                                <%= usuarios.apellidos %>
                                             </td>
                                             <td>
-                                                <%= usuario.rol %>
+                                                <%= usuarios.rol %>
                                             </td>
-                                            <td>
-                                                <a class="btn btn-warning btn-sm" href="/login">Editar/Eliminar</a>
-                                            </td>
+                                            <%if (usuario.rol=="Profesor" ){%>
+                                                <td>
+                                                    <a class="btn btn-warning btn-sm" href="/login">Editar/Eliminar</a>
+                                                </td>
+                                                <%}%>
                                         </tr>
                                         <% }) %>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="col-7 justify-content-around mb-5">
-                            <a class="btn btn-dark btn-block my-4 float-Start" href="/">Nuevo Usuario</a>
-                            <a class="btn btn-dark btn-block my-4 float-end" href="/">Volver</a>
+                        <div class="col-7 text-center mb-5">
+                            <%if (usuario.rol=="Profesor" ){%>
+                                <a class="btn btn-dark btn-block my-4 me-5" href="/">Nuevo Usuario</a>
+                                <%}%>
+                                    <a class="btn btn-dark btn-block my-4" href="/">Volver</a>
                         </div>
                     </div>
                 </div>

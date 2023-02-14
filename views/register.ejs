@@ -4,51 +4,55 @@
 
     <body class="register">
         <main class="container-fluid mainregister">
-        <div class="container-fluid">
-            <div class="row justify-content-center containerFormat">
-                <form action="/register" class="rounded-3 bg-dark p-4 text-white registerFormat align-self-center"
-                    method="POST">
-                    <div class="mt-2 text-center">
-                        <h1 class="display-6">Registrarse</h1>
-                    </div>
-                    <div class="mb-3 pt-4 ps-5 pe-5">
-                        <label for="username" class="form-label">Nombre de usuario</label>
-                        <input type="text" class="form-control" id="username" placeholder="Elige tu nombre de usuario"
-                            name="nombre">
-                    </div>
-                    <div class="mb-3 pt-4 ps-5 pe-5">
-                        <label for="name" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="name" placeholder="Escribe tu nombre"
-                            name="nombreReal">
-                    </div>
-                    <div class="mb-3 pt-4 ps-5 pe-5">
-                        <label for="apellidos" class="form-label">Apellidos</label>
-                        <input type="text" class="form-control" id="apellidos" placeholder="Escribe tus apellidos"
-                            name="apellidos">
-                    </div>
-                    <div class="mb-3 pt-4 ps-5 pe-5">
-                        <label for="exampleInputPassword1" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1"
-                            placeholder="Elige tu contraseña" name="password">
-                    </div>
-                    <div class="mb-3 pt-4 ps-5 pe-5">
-                        <label for="exampleInputPassword1" class="form-label">Elegir Rol</label>
-                        <select class="form-select" aria-label="Default select example" name="rol">
-                            <option value="Alumno" selected>Alumno</option>
-                            <option value="Profesor">Profesor</option>
-                        </select>
-                    </div>
-                    <div class="row justify-content-center">
-                        <button type="submit" class="btn btn-secondary mt-5 buttonFormat me-5">Completar registro</button>
+            <div class="container-fluid">
+                <div class="row justify-content-center containerFormat">
+                    <form action="/register" class="rounded-3 bg-dark p-4 text-white registerFormat align-self-center"
+                        method="POST">
+                        <div class="mt-2 text-center">
+                            <h1 class="display-6">Registrarse</h1>
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="username" class="form-label">Nombre de usuario</label>
+                            <input type="text" class="form-control" id="username"
+                                placeholder="Elige tu nombre de usuario" name="nombre">
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="name" placeholder="Escribe tu nombre"
+                                name="nombreReal">
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="apellidos" class="form-label">Apellidos</label>
+                            <input type="text" class="form-control" id="apellidos" placeholder="Escribe tus apellidos"
+                                name="apellidos">
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1"
+                                placeholder="Elige tu contraseña" name="password">
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="exampleInputPassword1" class="form-label">Elegir Rol</label>
+                            <select class="form-select" aria-label="Default select example" name="rol">
+                                <option value="Alumno" selected>Alumno</option>
+                                <option value="Profesor">Profesor</option>
+                            </select>
+                        </div>
+                        <div class="row justify-content-center">
+                            <button type="submit" class="btn btn-secondary mt-5 buttonFormat me-5">Completar
+                                registro</button>
 
-                        <a class="btn btn-secondary mt-5 buttonFormat" href="/login">Volver a Inicio</a>
-                        <%if (error){%>
-                            <p class="text-center mt-3 p-1 bg-danger">Rellena los campos necesarios/Ese nombre de
-                                usuario ya existe</p>
-                            <%}%>
-                    </div>
-                </form>
+                            <a class="btn btn-secondary mt-5 buttonFormat" href="/login">Volver a Inicio</a>
+                            <%if (error){%>
+                                <p class="text-center mt-3 p-1 bg-danger">Rellena los campos necesarios/Ese nombre de
+                                    usuario ya existe</p>
+                                <%}%>
+                                    <%if (success){%>
+                                        <p class="text-center mt-3 p-1 bg-success">Usuario creado satisfactoriamente</p>
+                                        <%}%>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
         </main>
         <%- include("template/footer.ejs")%>
