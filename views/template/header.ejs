@@ -1,10 +1,9 @@
-<%var home="" ,usuarios="" ; switch(tituloWeb){ case "Inicio" : home="active" ; break; case "Usuarios" :
-    usuarios="active" ; break; } %>
+<%var home="" , contabilidad="", usuarios="" ; switch(tituloWeb){ case "Inicio" : home="active" ; break; case "Contabilidad" :
+    contabilidad="active" ; break; case "Usuarios" : usuarios="active" ; break; } %>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
         <div class="container-fluid">
-            <div class="col-1 align-items-center text-center px-0 py-0 foto1"><img
-                class="bd-placeholder-img bd-placeholder-img-lg featurette image
+            <div class="col-1 align-items-center text-center px-0 py-0 foto1"><img class="bd-placeholder-img bd-placeholder-img-lg featurette image
         img-fluid mx-auto;" src="/img/favicon.png" style="max-width: 80px;"></div>
             <a class="navbar-brand" href="/">KOJIMA PRODUCTIONS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
@@ -14,15 +13,21 @@
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link <%=home%>" data-toggle="tooltip" data-placement="bottom" title="Proyectos en Desarrollo" href="/">Proyectos</a>
+                        <a class="nav-link <%=home%>" data-toggle="tooltip" data-placement="bottom"
+                            title="Proyectos en Desarrollo" href="/">Proyectos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <%=usuarios%>" data-toggle="tooltip" data-placement="right" title="Gastos Actuales" href="/users">Contabilidad</a>
+                        <a class="nav-link <%=contabilidad%>" data-toggle="tooltip" data-placement="bottom"
+                            title="Gastos Actuales" href="/wallet">Contabilidad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <%=usuarios%>" data-toggle="tooltip" data-placement="right"
+                            title="Trabajadores Registrados" href="/users">Usuarios</a>
                     </li>
                 </ul>
                 <form class="d-flex gap-3">
-                    <a class="btn btn-outline-light" href="/login">Iniciar Sesión</a>
-                    <a class="btn btn-warning" href="/register">Registrarse</a>
+                    <a class="btn btn-outline-light" href="/login">Cerrar Sesión</a>
+                    
                 </form>
             </div>
         </div>

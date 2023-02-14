@@ -6,7 +6,7 @@
         <%- include("template/header.ejs", {tituloWeb:"Inicio"})%>
             <main class="container-fluid">
                 <div class="container-fluid p-5">
-                    <h1 class="display-1">KOJIMA PRODUCTIONS. <br>Creado por Kojima. Parido por Kojima</h1>
+                    <h1 class="display-1">KOJIMA PRODUCTIONS.</h1>
                     <h1 class="display-6">
                         <%=title%>
                     </h1>
@@ -22,10 +22,11 @@
                                         <th scope="col">Responsable</th>
                                         <th scope="col">Tipo</th>
                                         <th scope="col"></th>
+                                        <th scope="col"></th>
                                     </tr>
                                 </thead>
 
-                                <tbody>
+                                <tbody class="border-bottom border-dark">
 
                                     <!--Haremos el foreach para recorrer el array-->
 
@@ -45,9 +46,11 @@
                                         </td>
 
 
+                                        
                                         <td>
-                                            <a class="btn btn-warning btn-sm" href="/login>">Editar/Eliminar</a>
+                                            <a class="btn btn-warning btn-sm" href="/login>">Entrar</a>
                                         </td>
+                                        
                                     </tr>
 
                                 </tbody>

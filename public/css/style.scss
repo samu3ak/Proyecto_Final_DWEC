@@ -1,4 +1,4 @@
-.principal {
+.principal,.login,.register,.usuarios,.contabilidad {
     width: 100%;
     height: 100%;
     display: block;
@@ -18,12 +18,7 @@
     background-size: cover;
     z-index: -1;
 }
-.login {
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: relative;
-}
+
 .login::after {
     content: "";
     background: url('../img/kojimawall.jpg');
@@ -38,9 +33,53 @@
     background-size: cover;
     z-index: -1;
 }
-main {
+
+.register::after {
+    content: "";
+    background: url('../img/registro.jpg');
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    z-index: -1;
+}
+
+.usuarios::after {
+    content: "";
+    background: url('../img/usuarios.jpg');
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    z-index: -1;
+}
+.contabilidad::after {
+    content: "";
+    background: url('../img/gigante.jpg');
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    z-index: -1;
+}
+main,.mainusuarios {
     min-height: 85vh;
 }
-.mainlogin {
+.mainlogin,.mainregister,.mainwallet{
     min-height: 100vh;
 }

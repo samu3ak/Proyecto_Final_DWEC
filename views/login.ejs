@@ -7,7 +7,8 @@
 
             <div class="container-fluid">
                 <div class="row justify-content-center containerFormat">
-                    <form action="/login" class="rounded bg-dark p-4 text-white loginFormat align-self-center" method="POST">
+                    <form action="/login" class="rounded bg-dark p-4 text-white loginFormat align-self-center"
+                        method="POST">
                         <div class="mt-2 text-center">
                             <h1 class="display-6">Iniciar Sesión</h1>
                         </div>
@@ -22,7 +23,9 @@
                                 placeholder="Tu contraseña" name="password">
                         </div>
                         <div class="row justify-content-center">
-                            <button type="submit" class="btn btn-success mt-5 buttonFormat">Iniciar Sesión</button>
+                            <button type="submit" class="btn btn-success mt-5 buttonFormat me-5">Iniciar Sesión</button>
+
+                            <a class="btn btn-success mt-5 buttonFormat" href="/register">Crear Usuario</a>
                             <%if (error){%>
                                 <p class="text-center mt-3 p-1 bg-danger">Usuario o contraseña incorrectos</p>
                                 <%}%>

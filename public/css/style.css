@@ -1,8 +1,9 @@
-.principal {
+.principal, .login, .register, .usuarios, .contabilidad {
   width: 100%;
   height: 100%;
   display: block;
-  position: relative; }
+  position: relative;
+}
 
 .principal::after {
   content: "";
@@ -16,13 +17,8 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  z-index: -1; }
-
-.login {
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: relative; }
+  z-index: -1;
+}
 
 .login::after {
   content: "";
@@ -36,12 +32,60 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  z-index: -1; }
+  z-index: -1;
+}
 
-main {
-  min-height: 85vh; }
+.register::after {
+  content: "";
+  background: url("../img/registro.jpg");
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  z-index: -1;
+}
 
-.mainlogin {
-  min-height: 100vh; }
+.usuarios::after {
+  content: "";
+  background: url("../img/usuarios.jpg");
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  z-index: -1;
+}
+
+.contabilidad::after {
+  content: "";
+  background: url("../img/gigante.jpg");
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  z-index: -1;
+}
+
+main, .mainusuarios {
+  min-height: 85vh;
+}
+
+.mainlogin, .mainregister, .mainwallet {
+  min-height: 100vh;
+}
 
 /*# sourceMappingURL=style.css.map */
