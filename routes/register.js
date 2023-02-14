@@ -4,6 +4,16 @@ const router = express.Router();
 // Require de los controladores de register
 const registerController = require("../controllers/registerController");
 
+// Comprueba que tiene iniciada sesión
+router.get("/*", (req, res, next) => {
+    req.session.cuenta = req.session.cuenta ? req.session.cuenta : false;
+    if (!req.session.cuenta) {
+        res.render("register", { tituloWeb: "Inicio de sesión", error: false });
+    } else {
+        next();
+    }
+});
+
 // GET de la página register
 router.get("/", registerController.index);
 

@@ -1,9 +1,14 @@
-.principal,.login,.register,.usuarios,.contabilidad {
+.principal,
+.login,
+.register,
+.usuarios,
+.contabilidad {
     width: 100%;
     height: 100%;
     display: block;
     position: relative;
 }
+
 .principal::after {
     content: "";
     background: url('../img/kojima.jpg');
@@ -63,6 +68,7 @@
     background-size: cover;
     z-index: -1;
 }
+
 .contabilidad::after {
     content: "";
     background: url('../img/gigante.jpg');
@@ -77,9 +83,14 @@
     background-size: cover;
     z-index: -1;
 }
-main,.mainusuarios,.mainwallet {
+
+main,
+.mainusuarios,
+.mainwallet {
     min-height: 85vh;
 }
-.mainlogin,.mainregister{
+
+.mainlogin,
+.mainregister {
     min-height: 100vh;
 }

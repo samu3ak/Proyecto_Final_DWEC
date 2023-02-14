@@ -1,68 +1,63 @@
-<%- include("template/head.ejs", {tituloWeb:"Usuarios"})%>
+<%- include("template/head.ejs", {tituloWeb:"Usuarios", usuario})%>
     </head>
 
     <body class="usuarios">
         <%- include("template/header.ejs", {tituloWeb:"Usuarios"})%>
 
-        <main class="container-fluid mainusuarios">
-            <div class="container-fluid p-5">
-                <h1 class="display-1 text-light">Usuarios</h1>
-                <h1 class="display-6 text-light">
-                    <%=title%>
-                </h1>
-            </div>
-            <div class="otro">
-                <div class="row justify-content-around ">
-                    <div class="col-6 text-center bg-secondary rounded">
-                        <table class="table ">
-                            <thead class="thead-dark">
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Apellidos</th>
-                                    <th scope="col">Rol</th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
+            <main class="container-fluid mainusuarios">
+                <div class="container-fluid p-5">
+                    <h1 class="display-1 text-light">Usuarios</h1>
+                    <h1 class="display-6 text-light">
+                        <%=title%>
+                    </h1>
+                </div>
+                <div class="otro">
+                    <div class="row justify-content-around">
+                        <div class="col-6 text-center bg-secondary rounded">
+                            <table class="table ">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th scope="col">Nombre de usuario</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Apellidos</th>
+                                        <th scope="col">Rol</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
 
-                            <tbody class="border-bottom border-dark">
+                                <tbody class="border-bottom border-dark">
 
-                                <!--Haremos el foreach para recorrer el array-->
-
-                                <tr>
-                                    <th scope="row">
-
-                                        Aqui
-                                    </th>
-                                    <td>
-                                        ddddd
-                                    </td>
-                                    <td>
-                                        sssss
-                                    </td>
-                                    <td>
-                                        ssssss
-                                    </td>
-
-
-                                    <td>
-                                        <a class="btn btn-warning btn-sm" href="/login>">Editar/Eliminar</a>
-                                    </td>
-                                    
-                                    
-                                </tr>
-
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="col-7 justify-content-around">
-                        <a class="btn btn-dark btn-block my-4 float-Start" href="/">Nuevo Usuario</a>
-                        <a class="btn btn-dark btn-block my-4 float-end" href="/">Volver</a>
+                                    <!--Haremos el foreach para recorrer el array-->
+                                    <% arrayUsuarios.forEach(usuario=> { %>
+                                        <tr>
+                                            <td>
+                                                <%= usuario.nombre %>
+                                            </td>
+                                            <td>
+                                                <%= usuario.nombreReal %>
+                                            </td>
+                                            <td>
+                                                <%= usuario.apellidos %>
+                                            </td>
+                                            <td>
+                                                <%= usuario.rol %>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-warning btn-sm" href="/login">Editar/Eliminar</a>
+                                            </td>
+                                        </tr>
+                                        <% }) %>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-7 justify-content-around mb-5">
+                            <a class="btn btn-dark btn-block my-4 float-Start" href="/">Nuevo Usuario</a>
+                            <a class="btn btn-dark btn-block my-4 float-end" href="/">Volver</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </main>
+            </main>
 
             <%- include("template/footer.ejs")%>

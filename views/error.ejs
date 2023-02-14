@@ -1,8 +1,12 @@
-<%- include("template/header.ejs", {tituloWeb:"Error 404" })%>
+<%- include("template/head.ejs", {tituloWeb:"Inicio"})%>
+    </head>
 
-    <h1 class="display-1">EROR 404</h1>
-    <h1 class="display-6">
-        No se ha encontrado la página que busca
-    </h1>
+    <body>
+        <%- include("template/header.ejs", {tituloWeb:"Inicio"})%>
 
-    <%- include("template/footer.ejs")%>
+            <h1 class="display-1">EROR 404</h1>
+            <h1 class="display-6">
+                No se ha encontrado la página que busca
+            </h1>
+
+            <%- include("template/footer.ejs")%>

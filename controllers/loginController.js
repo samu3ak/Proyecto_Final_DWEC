@@ -1,6 +1,7 @@
 const Usuario = require("../models/user");
 
 exports.index = (req, res) => {
+    req.session.cuenta = undefined;
     res.render("login", { tituloWeb: "Inicio de sesión", error: false });
 };
 
@@ -10,6 +11,7 @@ exports.user_login_post = async (req, res) => {
     try {
         let usuarioEncontrado = await Usuario.findOne({ nombre: `${body.nombre}`, password: `${body.password}` });
         if (usuarioEncontrado !== null) {
+            req.session.cuenta = usuarioEncontrado;
             res.redirect("/");
         } else {
             res.render("login", { tituloWeb: "Inicio de sesión fallido", error: true });

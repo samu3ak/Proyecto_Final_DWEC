@@ -1,9 +1,20 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.render("wallet", { title: "Lista de Gastos" });
+// Require de los controladores de users
+const walletController = require("../controllers/walletController");
+
+// Comprueba que tiene iniciada sesión
+router.get("/*", (req, res, next) => {
+  req.session.cuenta = req.session.cuenta ? req.session.cuenta : false;
+  if (!req.session.cuenta) {
+    res.render("login", { tituloWeb: "Inicio de sesión", error: false });
+  } else {
+    next();
+  }
 });
+
+/* GET users listing. */
+router.get('/', walletController.index);
 
 module.exports = router;

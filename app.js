@@ -47,6 +47,7 @@ app.use("/login", loginRouter);
 app.use("/register", registerRouter);
 app.use("/wallet", walletRouter);
 
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
@@ -60,7 +61,12 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  req.session.cuenta = req.session.cuenta ? req.session.cuenta : false;
+  if (req.session.cuenta) {
+    res.render("error", { tituloWeb: "Registro de usuario", usuario: req.session.cuenta });
+  } else {
+    res.render("login", { tituloWeb: "Inicio de sesión", error: false });
+  }
 });
 
 module.exports = app;
