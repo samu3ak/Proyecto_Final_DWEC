@@ -14,7 +14,7 @@ exports.user_register_post = async (req, res) => {
             let nuevoUsuario = new Usuario(body);
             await nuevoUsuario.save();
             res.render("register", { tituloWeb: "Registro de usuario satisfactorio", error: false, success: true });
-            
+            res.redirect("/");
         } else {
             res.render("register", { tituloWeb: "Registro de usuario erróneo", error: true, success: false });
         }

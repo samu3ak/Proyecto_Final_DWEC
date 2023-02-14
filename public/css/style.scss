@@ -77,9 +77,9 @@
     background-size: cover;
     z-index: -1;
 }
-main,.mainusuarios {
+main,.mainusuarios,.mainwallet {
     min-height: 85vh;
 }
-.mainlogin,.mainregister,.mainwallet{
+.mainlogin,.mainregister{
     min-height: 100vh;
 }

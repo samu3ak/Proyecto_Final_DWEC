@@ -1,0 +1,40 @@
+<%- include("template/head.ejs", {tituloWeb})%>
+    <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body class="login">
+        <main class="container-fluid mainlogin">
+
+            <div class="container-fluid">
+                <div class="row justify-content-center containerFormat">
+                    <form action="/login" class="rounded bg-dark p-4 text-white loginFormat align-self-center"
+                        method="POST">
+                        <div class="mt-2 text-center">
+                            <h1 class="display-6">Nuevo Grupo</h1>
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="nombregrupo" class="form-label">Nombre del Grupo</label>
+                            <input type="text" class="form-control" id="nombre grupo" placeholder="Grupo de Trabajo"
+                                name="nombregrupo">
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="responsable" class="form-label">Responsable</label>
+                            <input type="text" class="form-control" id="responsable"
+                                placeholder="Responsable del Grupo" name="responsable">
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="tipogrupo" class="form-label">Tipo</label>
+                            <input type="text" class="form-control" id="tipogrupo"
+                                placeholder="Tipo de Especialidad" name="tipogrupo">
+                        </div>
+                        <div class="row justify-content-center">
+                            <button type="submit" class="btn btn-success mt-5 buttonFormat me-5">Guardar Grupo</button>
+
+                            <a class="btn btn-success mt-5 buttonFormat" href="/">Volver</a>
+                            
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <%- include("template/footer.ejs")%>
