@@ -9,6 +9,7 @@ const projectSchema = new Schema({
         nombre: String
     },
     tipo: String,
+    horas: Number,
 });
 
 // Creación del modelo

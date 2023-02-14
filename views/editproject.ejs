@@ -1,5 +1,5 @@
 <%- include("template/head.ejs", {tituloWeb})%>
-    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="/css/register.css">
     </head>
 
     <body class="login">
@@ -7,41 +7,44 @@
 
             <div class="container">
                 <div class="row justify-content-center containerFormat">
-                    <form action="/crearProyecto" class="rounded bg-dark p-4 text-white loginFormat align-self-center"
-                        method="post">
+                    <form id="editar" class="rounded bg-dark p-4 text-white loginFormat align-self-center"
+                        data-id="<%=proyectoEditar.id%>">
                         <div class="mt-2 text-center">
-                            <h1 class="display-6">Nuevo Proyecto</h1>
+                            <h1 class="display-6">Editar proyecto</h1>
                         </div>
                         <div class="mb-3 pt-4 ps-5 pe-5">
                             <label for="nombreproyecto" class="form-label">Nombre del Proyecto</label>
                             <input type="text" class="form-control" id="nombre proyecto"
-                                placeholder="Proyecto de Trabajo" name="nombre">
+                                placeholder="Proyecto de Trabajo" name="nombre" value="<%=proyectoEditar.nombre%>">
                         </div>
                         <div class="mb-3 pt-4 ps-5 pe-5">
                             <label for="responsable" class="form-label">Responsable</label>
                             <input type="text" class="form-control" id="responsable"
-                                placeholder="Responsable del Proyecto" name="responsable">
+                                placeholder="Responsable del Proyecto" name="responsable"
+                                value="<%=proyectoEditar.responsable.nombre%>">
                         </div>
                         <div class="mb-3 pt-4 ps-5 pe-5">
                             <label for="tipo" class="form-label">Tipo</label>
-                            <input type="text" class="form-control" id="tipo" placeholder="Tipo de proyecto"
-                                name="tipo">
+                            <input type="text" class="form-control" id="tipo" placeholder="Tipo de proyecto" name="tipo"
+                                value="<%=proyectoEditar.tipo%>">
                         </div>
                         <div class="mb-3 pt-4 ps-5 pe-5">
                             <label for="horasproyecto" class="form-label">Horas</label>
                             <input type="number" class="form-control" id="horasproyecto" placeholder="Horas Estimadas"
-                                name="horas">
+                                name="horas" value="<%=proyectoEditar.horas%>">
                         </div>
                         <div class="row justify-content-center">
-                            <button type="submit" class="btn btn-success mt-5 buttonFormat me-5">Guardar
-                                Proyecto</button>
+                            <button id="edit" type="submit" class="btn btn-success mt-5 buttonFormat me-5">Guardar
+                                cambios</button>
+                            <button id="delete" type="submit" class="btn btn-danger mt-5 buttonFormat me-5">Eliminar
+                                proyecto</button>
 
                             <a class="btn btn-success mt-5 buttonFormat" href="/">Volver</a>
                             <%if (error){%>
                                 <p class="text-center mt-4 p-1 bg-danger">Rellena todos los campos correctamente</p>
                                 <%}%>
                                     <%if (success){%>
-                                        <p class="text-center mt-4 p-1 bg-success">Proyecto creado satisfactoriamente
+                                        <p class="text-center mt-4 p-1 bg-success">Proyecto editado satisfactoriamente
                                         </p>
                                         <%}%>
                         </div>
@@ -50,3 +53,4 @@
             </div>
         </main>
         <%- include("template/footer.ejs")%>
+            <script src="/js/edit_delete_project.js"></script>

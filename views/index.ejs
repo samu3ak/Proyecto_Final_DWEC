@@ -20,6 +20,7 @@
                                         <th scope="col">Nombre</th>
                                         <th scope="col">Responsable</th>
                                         <th scope="col">Tipo</th>
+                                        <th scope="col">Horas estimadas</th>
                                         <%if (usuario.rol=="Profesor" ){%>
                                             <th scope="col">Acción</th>
                                             <%}%>
@@ -41,9 +42,13 @@
                                             <td>
                                                 <%= proyecto.tipo %>
                                             </td>
+                                            <td>
+                                                <%= proyecto.horas %> horas
+                                            </td>
                                             <%if (usuario.rol=="Profesor" ){%>
                                                 <td>
-                                                    <a class="btn btn-warning btn-sm" href="/login">Editar/Eliminar</a>
+                                                    <a class="btn btn-warning btn-sm"
+                                                        href="/editarProyecto/<%= proyecto.id %>">Editar/Eliminar</a>
                                                 </td>
                                                 <%}%>
                                                     <td>
@@ -58,7 +63,7 @@
                         </div>
                         <%if (usuario.rol=="Profesor" ){%>
                             <div class="col-7 text-center mb-5">
-                                <a class="btn btn-dark btn-block my-4" href="/">Nuevo Proyecto</a>
+                                <a class="btn btn-dark btn-block my-4" href="/crearProyecto">Nuevo Proyecto</a>
                             </div>
                             <%}%>
                     </div>
