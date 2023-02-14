@@ -92,3 +92,23 @@ exports.index_edit_project_put = async (req, res) => {
         })
     }
 };
+
+exports.index_edit_project_delete = async (req, res) => {
+    const id = req.params.id;
+    try {
+        const borrarProyecto = await Proyecto.findByIdAndDelete(id);
+        if (!borrarProyecto) {
+            res.json({
+                estado: false,
+                mensaje: 'No se puede eliminar el proyecto'
+            })
+        } else {
+            res.json({
+                estado: true,
+                mensaje: 'Proyecto eliminado'
+            })
+        }
+    } catch (error) {
+        console.log(error);
+    }
+};

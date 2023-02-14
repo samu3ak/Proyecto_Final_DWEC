@@ -25,4 +25,6 @@ router.get("/editarProyecto/:id", indexController.index_edit_project);
 
 router.put("/editarProyecto/:id", indexController.index_edit_project_put);
 
+router.delete("/editarProyecto/:id", indexController.index_edit_project_delete);
+
 module.exports = router;

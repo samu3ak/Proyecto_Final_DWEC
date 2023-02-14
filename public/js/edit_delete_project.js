@@ -1,4 +1,5 @@
 const formEditar = document.querySelector('#editar');
+// Editar proyecto
 const btnEditar = document.querySelector("#edit");
 btnEditar.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -17,9 +18,29 @@ btnEditar.addEventListener("click", async (e) => {
         })
         const res = await data.json();
         if (res.estado) {
-            window.location.href = '/'
+            window.location.href = "/";
         } else {
-            console.log(res)
+            console.log(res);
+        }
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+// Eliminar proyecto
+const btnEliminar = document.querySelector("#delete");
+btnEliminar.addEventListener("click", async (e) => {
+    const id = formEditar.dataset.id;
+    e.preventDefault();
+    try {
+        const data = await fetch(`/editarProyecto/${id}`, {
+            method: "delete"
+        })
+        const res = await data.json();
+        if (res.estado) {
+            window.location.href = "/";
+        } else {
+            console.log(res);
         }
     } catch (error) {
         console.log(error);
