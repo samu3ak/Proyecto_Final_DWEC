@@ -2,11 +2,19 @@
 .login,
 .register,
 .usuarios,
-.contabilidad,.incidencias {
+.incidencias,.noticias{
     width: 100%;
     height: 100%;
     display: block;
     position: relative;
+    background-color: rgba(0,0,0,0.45);
+}
+.contabilidad{
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: relative;
+    background-color: rgba(0,0,0,1);
 }
 
 .principal::after {
@@ -85,7 +93,7 @@
 }
 .incidencias::after {
     content: "";
-    background: url('../img/zorro.jpg');
+    background: url('../img/death.jpg');
     opacity: 0.3;
     top: 0;
     left: 0;

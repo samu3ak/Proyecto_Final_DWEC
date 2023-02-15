@@ -1,8 +1,8 @@
-<%- include("template/head.ejs", {tituloWeb:"Contabilidad", usuario})%>
+<%- include("template/head.ejs", {tituloWeb:"Noticias", usuario})%>
     </head>
 
     <body class="noticias">
-        <%- include("template/header.ejs", {tituloWeb:"Contabilidad"})%>
+        <%- include("template/header.ejs", {tituloWeb:"Noticias"})%>
 
             <main class="container-fluid mainnews">
                 <div class="container-fluid p-5">
@@ -57,7 +57,7 @@
                     </div>
                     <div class="col-7 text-center">
                         <%if (usuario.rol=="Profesor" ){%>
-                            <a class="btn btn-dark btn-block my-4 me-5" href="/">Nuevo Gasto</a>
+                            <a class="btn btn-dark btn-block my-4 me-5" href="/">Nueva Noticia</a>
                             <%}%>
                                 <a class="btn btn-dark btn-block my-4" href="/">Volver</a>
                     </div>
