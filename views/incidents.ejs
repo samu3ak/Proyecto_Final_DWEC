@@ -1,12 +1,12 @@
 <%- include("template/head.ejs", {tituloWeb:"Contabilidad", usuario})%>
     </head>
 
-    <body class="contabilidad">
-        <%- include("template/header.ejs", {tituloWeb:"Contabilidad"})%>
+    <body class="incidencias">
+        <%- include("template/header.ejs", {tituloWeb:"Incidencias"})%>
 
-            <main class="container-fluid mainwallet">
+            <main class="container-fluid mainincidents">
                 <div class="container-fluid p-5">
-                    <h1 class="display-1">Gastos</h1>
+                    <h1 class="display-1">Incidencias/Avisos</h1>
                     <h1 class="display-6">
                         <%=title%>
                     </h1>
@@ -17,11 +17,11 @@
                         <table class="table">
                             <thead class="thead-dark fs-5">
                                 <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Concepto</th>
-                                    <th scope="col">Valor</th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
+                                    <th scope="col">Asunto</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Autor</th>
+                                    
                                 </tr>
                             </thead>
 
@@ -56,9 +56,9 @@
                         </table>
                     </div>
                     <div class="col-7 text-center">
-                        <%if (usuario.rol=="Profesor" ){%>
-                            <a class="btn btn-dark btn-block my-4 me-5" href="/">Nuevo Gasto</a>
-                            <%}%>
+                        
+                            <a class="btn btn-dark btn-block my-4 me-5" href="/">Nueva Incidencia</a>
+                            
                                 <a class="btn btn-dark btn-block my-4" href="/">Volver</a>
                     </div>
                 </div>

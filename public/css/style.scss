@@ -2,7 +2,7 @@
 .login,
 .register,
 .usuarios,
-.contabilidad {
+.contabilidad,.incidencias {
     width: 100%;
     height: 100%;
     display: block;
@@ -83,10 +83,38 @@
     background-size: cover;
     z-index: -1;
 }
+.incidencias::after {
+    content: "";
+    background: url('../img/zorro.jpg');
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    z-index: -1;
+}
+.noticias::after {
+    content: "";
+    background: url('../img/moto.jpg');
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    z-index: -1;
+}
 
 main,
 .mainusuarios,
-.mainwallet {
+.mainwallet,.mainincidents,.mainnews {
     min-height: 85vh;
 }
 

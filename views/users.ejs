@@ -13,9 +13,9 @@
                 </div>
                 <div class="otro">
                     <div class="row justify-content-around">
-                        <div class="col-6 text-center bg-secondary rounded">
+                        <div class="col-6 text-center bg-secondary rounded border border-light border-1">
                             <table class="table">
-                                <thead class="thead-dark">
+                                <thead class="thead-dark fs-5">
                                     <tr>
                                         <th scope="col">Nombre de usuario</th>
                                         <th scope="col">Nombre</th>
@@ -27,7 +27,7 @@
                                     </tr>
                                 </thead>
 
-                                <tbody class="border-bottom border-dark">
+                                <tbody class="border-bottom border-dark text-light">
 
                                     <!--Haremos el foreach para recorrer el array-->
                                     <% arrayUsuarios.forEach(usuarios=> { %>
@@ -56,9 +56,9 @@
                         </div>
                         <div class="col-7 text-center mb-5">
                             <%if (usuario.rol=="Profesor" ){%>
-                                <a class="btn btn-dark btn-block my-4 me-5" href="/">Nuevo Usuario</a>
+                                <a class="btn btn-secondary btn-block my-4 me-5" href="/">Nuevo Usuario</a>
                                 <%}%>
-                                    <a class="btn btn-dark btn-block my-4" href="/">Volver</a>
+                                    <a class="btn btn-secondary btn-block my-4" href="/">Volver</a>
                         </div>
                     </div>
                 </div>

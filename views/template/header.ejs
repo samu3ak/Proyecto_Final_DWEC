@@ -1,5 +1,6 @@
-<%var home="" , contabilidad="" , usuarios="" ; switch(tituloWeb){ case "Inicio" : home="active" ; break;
-    case "Contabilidad" : contabilidad="active" ; break; case "Usuarios" : usuarios="active" ; break; } %>
+<%var home="" , noticias="" ,contabilidad="" ,avisos="" , usuarios="" ; switch(tituloWeb){ case "Inicio" : home="active"
+    ; break;case "Noticias" : noticias="active" ; break; case "Contabilidad" : contabilidad="active" ; break;case "Incidencias" :
+    home="active" ; break; case "Usuarios" : usuarios="active" ; break; } %>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
         <div class="container-fluid">
@@ -17,8 +18,16 @@
                             title="Proyectos en Desarrollo" href="/">Proyectos</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link <%=noticias%>" data-toggle="tooltip" data-placement="bottom" title="Noticias"
+                            href="/news">Noticias</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link <%=contabilidad%>" data-toggle="tooltip" data-placement="bottom"
                             title="Gastos Actuales" href="/wallet">Contabilidad</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link <%=avisos%>" data-toggle="tooltip" data-placement="bottom" title="Avisos"
+                            href="/incidents">Incidencias</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <%=usuarios%>" data-toggle="tooltip" data-placement="right"

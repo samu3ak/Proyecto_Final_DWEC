@@ -1,12 +1,12 @@
 <%- include("template/head.ejs", {tituloWeb:"Contabilidad", usuario})%>
     </head>
 
-    <body class="contabilidad">
+    <body class="noticias">
         <%- include("template/header.ejs", {tituloWeb:"Contabilidad"})%>
 
-            <main class="container-fluid mainwallet">
+            <main class="container-fluid mainnews">
                 <div class="container-fluid p-5">
-                    <h1 class="display-1">Gastos</h1>
+                    <h1 class="display-1">Noticias</h1>
                     <h1 class="display-6">
                         <%=title%>
                     </h1>
@@ -18,9 +18,9 @@
                             <thead class="thead-dark fs-5">
                                 <tr>
                                     <th scope="col">#</th>
-                                    <th scope="col">Concepto</th>
-                                    <th scope="col">Valor</th>
-                                    <th scope="col"></th>
+                                    <th scope="col">Título</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Fecha</th>
                                     <th scope="col"></th>
                                 </tr>
                             </thead>

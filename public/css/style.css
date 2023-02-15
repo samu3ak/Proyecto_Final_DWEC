@@ -2,11 +2,12 @@
 .login,
 .register,
 .usuarios,
-.contabilidad {
+.contabilidad, .incidencias {
   width: 100%;
   height: 100%;
   display: block;
-  position: relative; }
+  position: relative;
+}
 
 .principal::after {
   content: "";
@@ -20,7 +21,8 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  z-index: -1; }
+  z-index: -1;
+}
 
 .login::after {
   content: "";
@@ -34,7 +36,8 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  z-index: -1; }
+  z-index: -1;
+}
 
 .register::after {
   content: "";
@@ -48,7 +51,8 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  z-index: -1; }
+  z-index: -1;
+}
 
 .usuarios::after {
   content: "";
@@ -62,7 +66,8 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  z-index: -1; }
+  z-index: -1;
+}
 
 .contabilidad::after {
   content: "";
@@ -76,15 +81,48 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  z-index: -1; }
+  z-index: -1;
+}
+
+.incidencias::after {
+  content: "";
+  background: url("../img/death.jpg");
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  z-index: -1;
+}
+
+.noticias::after {
+  content: "";
+  background: url("../img/moto.jpg");
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  z-index: -1;
+}
 
 main,
 .mainusuarios,
-.mainwallet {
-  min-height: 85vh; }
+.mainwallet, .mainincidents, .mainnews {
+  min-height: 85vh;
+}
 
 .mainlogin,
 .mainregister {
-  min-height: 100vh; }
+  min-height: 100vh;
+}
 
 /*# sourceMappingURL=style.css.map */

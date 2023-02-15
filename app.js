@@ -23,6 +23,8 @@ const usersRouter = require('./routes/users');
 const loginRouter = require("./routes/login");
 const registerRouter = require("./routes/register");
 const walletRouter = require("./routes/wallet");
+const newsRouter = require("./routes/news");
+const incidentsRouter = require("./routes/incidents");
 
 var app = express();
 
@@ -46,6 +48,9 @@ app.use('/users', usersRouter);
 app.use("/login", loginRouter);
 app.use("/register", registerRouter);
 app.use("/wallet", walletRouter);
+app.use('/news', newsRouter);
+app.use('/incidents', incidentsRouter);
+
 
 
 // catch 404 and forward to error handler
