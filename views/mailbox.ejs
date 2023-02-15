@@ -40,7 +40,8 @@
                                         </td>
                                         <%if (usuario.rol=="Profesor" ){%>
                                             <td>
-                                                <a class="btn btn-danger btn-sm" href="/login">Eliminar</a>
+                                                <a class="btn btn-danger btn-sm eliminar" href="/login"
+                                                    data-id="<%=problema.id%>">Eliminar</a>
                                             </td>
                                             <%}%>
                                     </tr>
@@ -58,3 +59,4 @@
             </main>
 
             <%- include("template/footer.ejs")%>
+                <script src="/js/delete_mail.js"></script>
