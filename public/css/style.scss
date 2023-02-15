@@ -2,7 +2,7 @@
 .login,
 .register,
 .usuarios,
-.incidencias,.noticias{
+.incidencias,.noticias,.buzon{
     width: 100%;
     height: 100%;
     display: block;
@@ -119,10 +119,24 @@
     background-size: cover;
     z-index: -1;
 }
+.buzon::after {
+    content: "";
+    background: url('../img/kojimalast.jfif');
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+    z-index: -1;
+}
 
 main,
 .mainusuarios,
-.mainwallet,.mainincidents,.mainnews {
+.mainwallet,.mainincidents,.mainnews,.mainmailbox {
     min-height: 85vh;
 }
 

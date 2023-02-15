@@ -1,6 +1,6 @@
-<%var home="" , noticias="" ,contabilidad="" ,avisos="" , usuarios="" ; switch(tituloWeb){ case "Inicio" : home="active"
-    ; break;case "Noticias" : noticias="active" ; break; case "Contabilidad" : contabilidad="active" ; break;case "Incidencias" :
-    home="active" ; break; case "Usuarios" : usuarios="active" ; break; } %>
+<%var home="" , noticias="" ,contabilidad="" ,avisos="" , usuarios="", buzon="", problema="" ; switch(tituloWeb){ case "Inicio" : home="active"
+    ; break;case "Noticias" : noticias="active" ; break; case "Contabilidad" : contabilidad="active" ;
+    break;case "Incidencias" : home="active" ; break; case "Usuarios" : usuarios="active" ; break;  case "Buzon" : buzon="active" ; break;  case "Problema" : problema="active" ; break; } %>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
         <div class="container-fluid">
@@ -18,21 +18,33 @@
                             title="Proyectos en Desarrollo" href="/">Proyectos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <%=noticias%>" data-toggle="tooltip" data-placement="bottom" title="Noticias de la Empresa"
-                            href="/news">Noticias</a>
+                        <a class="nav-link <%=noticias%>" data-toggle="tooltip" data-placement="bottom"
+                            title="Noticias de la Empresa" href="/news">Noticias</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <%=contabilidad%>" data-toggle="tooltip" data-placement="bottom"
                             title="Gastos Actuales" href="/wallet">Contabilidad</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <%=avisos%>" data-toggle="tooltip" data-placement="bottom" title="Avisos o Incidencias"
-                            href="/incidents">Incidencias</a>
+                        <a class="nav-link <%=avisos%>" data-toggle="tooltip" data-placement="bottom"
+                            title="Avisos o Incidencias" href="/incidents">Incidencias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link <%=usuarios%>" data-toggle="tooltip" data-placement="right"
+                        <a class="nav-link <%=usuarios%>" data-toggle="tooltip" data-placement="bottom"
                             title="Trabajadores Registrados" href="/users">Usuarios</a>
                     </li>
+                    <%if (usuario.rol=="Profesor" ){%>
+                        <li class="nav-item">
+                            <a class="nav-link <%=buzon%>" data-toggle="tooltip" data-placement="bottom"
+                                title="Buzon de Peticiones" href="/mailbox">Buzón</a>
+                        </li>
+                        <%}%>
+                            <%if (usuario.rol=="Alumno" ){%>
+                                <li class="nav-item">
+                                    <a class="nav-link <%=problema%>" data-toggle="tooltip" data-placement="right"
+                                        title="Problema o Petición" href="/problem">Problema</a>
+                                </li>
+                                <%}%>
                 </ul>
                 <form class="d-flex gap-3">
                     <a class="btn fw-bolder">Bienvenido <%=usuario.rol%>, <%=usuario.nombre%>

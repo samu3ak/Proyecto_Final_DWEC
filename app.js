@@ -25,6 +25,8 @@ const registerRouter = require("./routes/register");
 const walletRouter = require("./routes/wallet");
 const newsRouter = require("./routes/news");
 const incidentsRouter = require("./routes/incidents");
+const problemRouter = require("./routes/problem");
+const mailboxRouter = require("./routes/mailbox");
 
 var app = express();
 
@@ -50,6 +52,8 @@ app.use("/register", registerRouter);
 app.use("/wallet", walletRouter);
 app.use('/news', newsRouter);
 app.use('/incidents', incidentsRouter);
+app.use('/mailbox', mailboxRouter);
+app.use('/problem', problemRouter);
 
 
 
