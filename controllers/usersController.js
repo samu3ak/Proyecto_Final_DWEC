@@ -1,6 +1,6 @@
 const Usuario = require("../models/user");
 
-exports.index = async (req, res) => {
+exports.users = async (req, res) => {
     try {
         const arrayUsuarios = await Usuario.find();
         res.render("users", { title: "Lista de usuarios", arrayUsuarios: arrayUsuarios, usuario: req.session.cuenta });

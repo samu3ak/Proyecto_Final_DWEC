@@ -15,6 +15,19 @@ router.get("/*", (req, res, next) => {
 });
 
 /* GET users listing. */
-router.get('/', walletController.index);
+router.get('/', walletController.wallet);
+
+router.get('/crearGasto', walletController.wallet_create_spent);
+
+router.get('/editarGasto/:id', walletController.wallet_edit_spent);
+
+// POST Gasto
+router.post('/crearGasto', walletController.wallet_create_spent_post);
+
+// PUT Gasto
+router.put("/editarGasto/:id", walletController.wallet_edit_spent_put);
+
+// Delete Gasto
+router.delete("/editarGasto/:id", walletController.wallet_spent_delete);
 
 module.exports = router;

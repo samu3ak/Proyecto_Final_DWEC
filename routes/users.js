@@ -15,6 +15,6 @@ router.get("/*", (req, res, next) => {
 });
 
 /* GET users listing. */
-router.get('/', usersController.index);
+router.get('/', usersController.users);
 
 module.exports = router;

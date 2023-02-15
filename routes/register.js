@@ -15,7 +15,7 @@ router.get("/*", (req, res, next) => {
 });
 
 // GET de la página register
-router.get("/", registerController.index);
+router.get("/", registerController.register);
 
 // POST request para registrar un nuevo usuario
 router.post("/", registerController.user_register_post);

@@ -28,28 +28,27 @@
                             <tbody class="border-bottom border-dark ">
 
                                 <!--Haremos el foreach para recorrer el array-->
-
-                                <tr>
-                                    <td>
-                                        ddddd
-                                    </td>
-                                    <td>
-                                        sssss
-                                    </td>
-
-                                    <%if (usuario.rol=="Profesor" ){%>
+                                <% arrayGastos.forEach(gasto=> { %>
+                                    <tr>
+                                        <th>
+                                            <%= gasto.nombre %>
+                                        </th>
                                         <td>
-                                            <a class="btn btn-warning btn-sm" href="/login>">Editar/Eliminar</a>
+                                            <%= gasto.cantidad+"€"%>
                                         </td>
-                                        <%}%>
-
-                                </tr>
-
+                                        <%if (usuario.rol=="Profesor" ){%>
+                                            <td>
+                                                <a class="btn btn-warning btn-sm"
+                                                    href="/wallet/editarGasto/<%=gasto.id%>">Editar/Eliminar</a>
+                                            </td>
+                                            <%}%>
+                                    </tr>
+                                    <% }) %>
                             </tbody>
                         </table>
                     </div>
                     <div class="col-7 text-center">
-                        <a class="btn btn-dark btn-block my-4 me-5" href="/">Nuevo Gasto</a>
+                        <a class="btn btn-dark btn-block my-4 me-5" href="/wallet/crearGasto">Nuevo Gasto</a>
                         <a class="btn btn-dark btn-block my-4" href="/">Volver</a>
                     </div>
                 </div>

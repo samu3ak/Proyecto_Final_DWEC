@@ -1,6 +1,6 @@
 const Usuario = require("../models/user");
 
-exports.index = (req, res) => {
+exports.register = (req, res) => {
     res.render("register", { tituloWeb: "Registro de usuario", error: false, success: false });
 };
 

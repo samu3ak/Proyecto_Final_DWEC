@@ -15,9 +15,9 @@ router.get("/*", (req, res, next) => {
 });
 
 // GET de la página problem
-router.get("/", problemController.index);
+router.get("/", problemController.problem);
 
 // POST de la página problem
-router.post("/", problemController.index_problem_create_post);
+router.post("/", problemController.problem_create_post);
 
 module.exports = router;

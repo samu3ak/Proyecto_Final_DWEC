@@ -1,10 +1,10 @@
 const Problema = require("../models/problema");
 
-exports.index = (req, res) => {
+exports.problem = (req, res) => {
     res.render("problem", { tituloWeb: "Problema", usuario: req.session.cuenta, error: false, success: false });
 };
 
-exports.index_problem_create_post = async (req, res) => {
+exports.problem_create_post = async (req, res) => {
     const body = req.body;
 
     try {

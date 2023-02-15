@@ -15,9 +15,9 @@ router.get("/*", (req, res, next) => {
 });
 
 /* GET users listing. */
-router.get('/', mailboxController.index);
+router.get('/', mailboxController.mailbox);
 
 // Delete
-router.delete("/:id", mailboxController.index_mail_delete);
+router.delete("/:id", mailboxController.mailbox_delete);
 
 module.exports = router;

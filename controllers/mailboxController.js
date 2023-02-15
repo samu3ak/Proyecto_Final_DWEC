@@ -1,6 +1,6 @@
 const Problema = require("../models/problema");
 
-exports.index = async (req, res) => {
+exports.mailbox = async (req, res) => {
     try {
         const arrayProblemas = await Problema.find();
         res.render("mailbox", { title: "Lista de Mensajes", usuario: req.session.cuenta, arrayProblemas: arrayProblemas });
@@ -9,7 +9,7 @@ exports.index = async (req, res) => {
     }
 };
 
-exports.index_mail_delete = async (req, res) => {
+exports.mailbox_delete = async (req, res) => {
     const id = req.params.id;
     try {
         const borrarMail = await Problema.findByIdAndDelete(id);

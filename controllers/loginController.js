@@ -1,6 +1,6 @@
 const Usuario = require("../models/user");
 
-exports.index = (req, res) => {
+exports.login = (req, res) => {
     req.session.cuenta = undefined;
     res.render("login", { tituloWeb: "Inicio de sesión", error: false });
 };
