@@ -21,7 +21,9 @@
                                     <th scope="col">Descripción</th>
                                     <th scope="col">Fecha</th>
                                     <th scope="col">Autor</th>
-                                    
+                                    <%if (usuario.rol=="Profesor" ){%>
+                                        <th scope="col">Acción</th>
+                                        <%}%>
                                 </tr>
                             </thead>
 
@@ -44,11 +46,11 @@
                                         ssssss
                                     </td>
 
-
-                                    <td>
-                                        <a class="btn btn-warning btn-sm" href="/login>">Editar/Eliminar</a>
-                                    </td>
-
+                                    <%if (usuario.rol=="Profesor" ){%>
+                                        <td>
+                                            <a class="btn btn-warning btn-sm" href="/login>">Editar/Eliminar</a>
+                                        </td>
+                                        <%}%>
 
                                 </tr>
 
@@ -56,10 +58,8 @@
                         </table>
                     </div>
                     <div class="col-7 text-center">
-                        <%if (usuario.rol=="Profesor" ){%>
-                            <a class="btn btn-dark btn-block my-4 me-5" href="/">Nueva Incidencia</a>
-                            <%}%>
-                                <a class="btn btn-dark btn-block my-4" href="/">Volver</a>
+                        <a class="btn btn-dark btn-block my-4 me-5" href="/">Nueva Incidencia</a>
+                        <a class="btn btn-dark btn-block my-4" href="/">Volver</a>
                     </div>
                 </div>
 

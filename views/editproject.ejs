@@ -19,9 +19,16 @@
                         </div>
                         <div class="mb-3 pt-4 ps-5 pe-5">
                             <label for="responsable" class="form-label">Responsable</label>
-                            <input type="text" class="form-control" id="responsable"
-                                placeholder="Responsable del Proyecto" name="responsable"
-                                value="<%=proyectoEditar.responsable.nombre%>">
+                            <select class="form-select" aria-label="Default select example" name="responsable">
+                                <option value="<%=proyectoEditar.responsable.nombre%>">
+                                    <%=proyectoEditar.responsable.nombre%>
+                                </option>
+                                <% arrayJefes.forEach(jefe=> { %>
+                                    <option value="<%=jefe.nombre%>">
+                                        <%=jefe.nombre%>
+                                    </option>
+                                    <% }) %>
+                            </select>
                         </div>
                         <div class="mb-3 pt-4 ps-5 pe-5">
                             <label for="tipo" class="form-label">Tipo</label>

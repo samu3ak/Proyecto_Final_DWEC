@@ -10,16 +10,22 @@ exports.index = async (req, res) => {
     }
 };
 
-exports.index_create_project = (req, res) => {
-    res.render("addproject", { tituloWeb: "Crear nuevo proyecto", error: false, success: false });
+exports.index_create_project = async (req, res) => {
+    try {
+        const arrayJefes = await Usuario.find({ rol: "Profesor" });
+        res.render("addproject", { tituloWeb: "Crear nuevo proyecto", arrayJefes: arrayJefes, error: false, success: false });
+    } catch (error) {
+        console.log(error);
+    }
 };
 
 exports.index_create_project_post = async (req, res) => {// Recuperamos los datos del formulario
     const body = req.body;
     try {
+        const arrayJefes = await Usuario.find({ rol: "Profesor" });
         // Recuperación de datos del responsable del proyecto
         const usuarioResponsable = await Usuario.findOne({ nombre: body.responsable });
-        const mismoNombre = await Proyecto.findOne({ nombre: `${body.nombre}` });
+        const mismoNombre = await Proyecto.findOne({ nombre: body.nombre });
         // Validación de campos
         if (mismoNombre === null && usuarioResponsable != null && (body.nombre != "" && body.tipo != "" && body.horas != "")) {
             const nuevoProyecto = new Proyecto({
@@ -32,9 +38,9 @@ exports.index_create_project_post = async (req, res) => {// Recuperamos los dato
                 horas: body.horas
             });
             await nuevoProyecto.save();
-            res.render("addproject", { tituloWeb: "Crear nuevo proyecto", error: false, success: true });
+            res.render("addproject", { tituloWeb: "Crear nuevo proyecto", arrayJefes: arrayJefes, error: false, success: true });
         } else {
-            res.render("addproject", { tituloWeb: "Crear nuevo proyecto", error: true, success: false });
+            res.render("addproject", { tituloWeb: "Crear nuevo proyecto", arrayJefes: arrayJefes, error: true, success: false });
         }
     } catch (err) {
         console.log(err);
@@ -45,8 +51,9 @@ exports.index_edit_project = async (req, res) => {
     const id = req.params.id;
 
     try {
+        const arrayJefes = await Usuario.find({ rol: "Profesor" });
         const proyectoEditar = await Proyecto.findById(id);
-        res.render("editproject", { tituloWeb: "Editar proyecto existente", proyectoEditar: proyectoEditar, error: false, success: false });
+        res.render("editproject", { tituloWeb: "Editar proyecto existente", arrayJefes: arrayJefes, proyectoEditar: proyectoEditar, error: false, success: false });
     } catch (error) {
         console.log(error);
     }

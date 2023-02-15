@@ -17,11 +17,11 @@
                         <table class="table">
                             <thead class="thead-dark fs-5">
                                 <tr>
-                                    <th scope="col">#</th>
                                     <th scope="col">Concepto</th>
                                     <th scope="col">Valor</th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
+                                    <%if (usuario.rol=="Profesor" ){%>
+                                        <th scope="col">Acción</th>
+                                        <%}%>
                                 </tr>
                             </thead>
 
@@ -30,25 +30,18 @@
                                 <!--Haremos el foreach para recorrer el array-->
 
                                 <tr>
-                                    <th scope="row">
-
-                                        Aqui
-                                    </th>
                                     <td>
                                         ddddd
                                     </td>
                                     <td>
                                         sssss
                                     </td>
-                                    <td>
-                                        ssssss
-                                    </td>
 
-
-                                    <td>
-                                        <a class="btn btn-warning btn-sm" href="/login>">Editar/Eliminar</a>
-                                    </td>
-
+                                    <%if (usuario.rol=="Profesor" ){%>
+                                        <td>
+                                            <a class="btn btn-warning btn-sm" href="/login>">Editar/Eliminar</a>
+                                        </td>
+                                        <%}%>
 
                                 </tr>
 
@@ -56,10 +49,8 @@
                         </table>
                     </div>
                     <div class="col-7 text-center">
-                        <%if (usuario.rol=="Profesor" ){%>
-                            <a class="btn btn-dark btn-block my-4 me-5" href="/">Nuevo Gasto</a>
-                            <%}%>
-                                <a class="btn btn-dark btn-block my-4" href="/">Volver</a>
+                        <a class="btn btn-dark btn-block my-4 me-5" href="/">Nuevo Gasto</a>
+                        <a class="btn btn-dark btn-block my-4" href="/">Volver</a>
                     </div>
                 </div>
 
