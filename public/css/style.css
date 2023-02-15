@@ -7,7 +7,7 @@
   height: 100%;
   display: block;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 .contabilidad {
@@ -15,7 +15,7 @@
   height: 100%;
   display: block;
   position: relative;
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .principal::after {
@@ -81,7 +81,7 @@
 .contabilidad::after {
   content: "";
   background: url("../img/gigante.jpg");
-  opacity: 0.9;
+  opacity: 0.7;
   top: 0;
   left: 0;
   bottom: 0;
