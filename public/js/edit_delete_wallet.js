@@ -16,7 +16,7 @@ btnEditar.addEventListener("click", async (e) => {
         })
         const res = await data.json();
         if (res.estado) {
-            window.location.href = "/wallet";
+            window.location.href = `/wallet`;
         } else {
             console.log(res);
         }

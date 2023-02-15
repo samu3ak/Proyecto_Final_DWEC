@@ -30,35 +30,35 @@
                             <tbody class="border-bottom border-dark ">
 
                                 <!--Haremos el foreach para recorrer el array-->
-
-                                <tr>
-                                    <th>
-
-                                        Aqui
-                                    </th>
-                                    <td>
-                                        ddddd
-                                    </td>
-                                    <td>
-                                        sssss
-                                    </td>
-                                    <td>
-                                        ssssss
-                                    </td>
-
-                                    <%if (usuario.rol=="Profesor" ){%>
+                                <% arrayIncidencias.forEach(incidencia=> { %>
+                                    <tr>
+                                        <th>
+                                            <%= incidencia.asunto %>
+                                        </th>
                                         <td>
-                                            <a class="btn btn-warning btn-sm" href="/">Marcar como solventada</a>
+                                            <%= incidencia.descripcion %>
                                         </td>
-                                        <%}%>
-
-                                </tr>
-
+                                        <td>
+                                            <%= incidencia.fecha %>
+                                        </td>
+                                        <td>
+                                            <%= incidencia.autor %>
+                                        </td>
+                                        <%if (usuario.rol=="Profesor" ){%>
+                                            <td>
+                                                <a class="btn btn-warning btn-sm eliminar"
+                                                    href="/incidents/<%=incidencia._id%>"
+                                                    data-id="<%=incidencia._id%>">Marcar como solventada</a>
+                                            </td>
+                                            <%}%>
+                                    </tr>
+                                    <% }) %>
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-7 text-center">
-                        <a class="btn btn-dark btn-block my-4 me-5" href="/">Nueva Incidencia</a>
+                    <div class=" col-7 text-center">
+                        <a class="btn btn-dark btn-block my-4 me-5" href="/incidents/crearIncidencia">Nueva
+                            Incidencia</a>
                         <a class="btn btn-dark btn-block my-4" href="/">Volver</a>
                     </div>
                 </div>
@@ -67,3 +67,4 @@
             </main>
 
             <%- include("template/footer.ejs")%>
+                <script src="js/delete_incident.js"></script>

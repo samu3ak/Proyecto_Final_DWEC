@@ -1,0 +1,46 @@
+<%- include("template/head.ejs", {tituloWeb})%>
+    <link rel="stylesheet" href="/css/register.css">
+    </head>
+
+    <body class="login">
+        <main class="container-fluid mainlogin">
+
+            <div class="container">
+                <div class="row justify-content-center containerFormat">
+                    <form action="/incidents/crearIncidencia" class="rounded bg-dark p-4 text-white align-self-center"
+                        method="post">
+                        <div class="mt-2 text-center">
+                            <h1 class="display-6">Nueva Incidencia</h1>
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="asunto" class="form-label">Asunto de la incidencia</label>
+                            <input type="text" class="form-control" id="asunto" placeholder="Asunto" name="asunto">
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="descripcion" class="form-label">Descripcion</label>
+                            <input type="text" class="form-control" id="descripcion"
+                                placeholder="Descripcion breve de la incidencia" name="descripcion">
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="tipo" class="form-label">Autor</label>
+                            <input type="text" class="form-control" id="tipo" placeholder="Autor" name="autor"
+                                readonly="readonly" value="<%=usuario.nombre%>">
+                        </div>
+                        <div class="row justify-content-center">
+                            <button type="submit" class="btn btn-success mt-5 buttonFormat me-5">Añadir
+                                Incidencia</button>
+
+                            <a class="btn btn-success mt-5 buttonFormat" href="/incidents">Volver</a>
+                            <%if (error){%>
+                                <p class="text-center mt-4 p-1 bg-danger">Rellena todos los campos correctamente</p>
+                                <%}%>
+                                    <%if (success){%>
+                                        <p class="text-center mt-4 p-1 bg-success">Incidencia creada satisfactoriamente
+                                        </p>
+                                        <%}%>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <%- include("template/footer.ejs")%>

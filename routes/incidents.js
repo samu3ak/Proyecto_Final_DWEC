@@ -17,4 +17,12 @@ router.get("/*", (req, res, next) => {
 /* GET users listing. */
 router.get('/', incidentsController.incidents);
 
+router.get("/crearIncidencia", incidentsController.incidents_create_incident);
+
+// POST incidencias
+router.post("/crearIncidencia", incidentsController.incidents_create_incident_post);
+
+// DELETE incidencias
+router.delete("/:id", incidentsController.incidents_incident_delete);
+
 module.exports = router;

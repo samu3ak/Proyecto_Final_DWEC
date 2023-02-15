@@ -17,6 +17,7 @@
                         <table class="table">
                             <thead class="thead-dark fs-5">
                                 <tr>
+                                    <th scope="col">Fecha</th>
                                     <th scope="col">Remitente</th>
                                     <th scope="col">Asunto</th>
                                     <th scope="col">Descripcion</th>
@@ -29,6 +30,9 @@
                                 <!--Haremos el foreach para recorrer el array-->
                                 <% arrayProblemas.forEach(problema=> { %>
                                     <tr>
+                                        <th>
+                                            <%= problema.fecha %>
+                                        </th>
                                         <td>
                                             <%= problema.remitente %>
                                         </td>
