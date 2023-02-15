@@ -17,4 +17,17 @@ router.get("/*", (req, res, next) => {
 /* GET users listing. */
 router.get('/', newsController.news);
 
+router.get('/crearNoticia', newsController.news_create_new);
+
+router.get('/editarNoticia/:id', newsController.news_edit_news);
+
+// POST Noticia
+router.post("/crearNoticia", newsController.news_create_new_post);
+
+// PUT Noticia
+router.put("/editarNoticia/:id", newsController.news_edit_news_put);
+
+// DELETE Noticia
+router.delete("/editarNoticia/:id", newsController.news_edit_news_delete);
+
 module.exports = router;
