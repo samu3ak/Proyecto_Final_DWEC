@@ -1,68 +1,111 @@
 <%- include("template/head.ejs", {tituloWeb:"Inicio"})%>
+    <link rel="stylesheet" href="/css/project.css">
     </head>
 
     <body class="principal">
 
         <%- include("template/header.ejs", {tituloWeb:"Inicio"})%>
-            <main class="container-fluid">
-                <div class="container-fluid p-5">
-                    <h1 class="display-1">KOJIMA PRODUCTIONS.</h1>
-                    <h1 class="display-6">
-                        <%=title%>
-                    </h1>
-                </div>
-                <div class="otro">
-                    <div class="row justify-content-around ">
-                        <div class="col-6 text-center bg-secondary rounded">
-                            <table class="table ">
-                                <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col">#</th>
-                                        <th scope="col">Nombre</th>
-                                        <th scope="col">Responsable</th>
-                                        <th scope="col">Horas Estimadas</th>
-                                        <th scope="col"></th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
+            <main class="container-fluid mb-5">
+                <div class="row">
+                    <div class="col-6 text-center bg-info">
+                        <h1>Tareas</h1>
+                        <table class="table m-5">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Nombre</th>
+                                    <th scope="col">Descripcion</th>
+                                    <th scope="col">Autor</th>
+                                    <th scope="col">Fecha</th>
+                                    <th scope="col">Estado</th>
+                                    <%if (usuario.rol=="Profesor" ){%>
+                                        <th scope="col">Acción</th>
+                                        <%}%>
+                                            <th scope="col"></th>
+                                </tr>
+                            </thead>
 
-                                <tbody class="border-bottom border-dark">
+                            <tbody class="border-bottom border-dark">
 
-                                    <!--Haremos el foreach para recorrer el array-->
+                                <!--Haremos el foreach para recorrer el array-->
 
-                                    <tr>
-                                        <th scope="row">
-
-                                            Aqui
-                                        </th>
-                                        <td>
-                                            ddddd
-                                        </td>
-                                        <td>
-                                            sssss
-                                        </td>
-                                        <td>
-                                            ssssss
-                                        </td>
-
-
-                                        
-                                        <td>
-                                            <a class="btn btn-warning btn-sm" href="/login>">Entrar</a>
-                                        </td>
-                                        
-                                    </tr>
-
-                                </tbody>
-                            </table>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-6 bg-info">
+                        <h1 class="text-center">Chat</h1>
+                        <div class="row justify-content-center">
+                            <div class="col-12 chatSize bg-white border border-2 border-primary rounded">
+                                <div class="row p-3">
+                                    <% arrayMensajes.forEach(mensaje=> { %>
+                                        <div class="col-12 mt-2 mensaje bg-warning rounded">
+                                            <div class="col-3 pt-1 fw-bolder float-end text-end">
+                                                <p>
+                                                    <%=mensaje.fecha%>
+                                                </p>
+                                            </div>
+                                            <div class="col-9 pt-1 fw-bolder">
+                                                <p>
+                                                    <%=mensaje.autor%>
+                                                </p>
+                                            </div>
+                                            <div class="col-12 fw-bolder">
+                                                <p>
+                                                    <%=mensaje.mensaje%>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <% }) %>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-7 justify-content-around">
-                            <a class="btn btn-dark btn-block my-4 float-Start" href="/addproject">Nuevo Proyecto</a>
-                            <a class="btn btn-dark btn-block my-4 float-Start" href="/editgroup">Modificar Grupo</a>
-                            <a class="btn btn-dark btn-block my-4 float-end" href="/">Volver</a>
+                        <div class="col-12 text-center">
+                            <div class="row justify-content-center">
+                                <div class="col-6">
+                                    <button class="btn btn-danger mt-2 bajar float-start vaciarChat"
+                                        data-id="<%=proyecto.id%>">Vaciar chat</button>
+                                    <button class="btn btn-primary mt-2 bajar">Volver abajo</button>
+                                </div>
+                            </div>
+                            <form action="/project/<%=proyecto.id%>" class="row g-3 justify-content-center p-5"
+                                method="post">
+                                <div class="col-6">
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                        placeholder="Escribe aquí tu mensaje" name="mensaje"></textarea>
+                                </div>
+
+                                <%if (locals.error){%>
+                                    <p class="text-center mt-3 p-1 bg-danger">No puede enviar un mensaje en blanco</p>
+                                    <%}%>
+                                        <div class="col-12">
+                                            <button class="btn btn-success" type="submit">Enviar mensaje</button>
+                                        </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-
+                </div>
             </main>
             <%- include("template/footer.ejs")%>
+                <script>
+                    $(document).ready(function () {
+                        $(".chatSize").animate({ scrollTop: 99999 }, 100);
+                        $(".bajar").click(function (e) {
+                            e.preventDefault();
+                            $(".chatSize").animate({ scrollTop: 99999 }, 100);
+                        });
+                    });
+
+                    $(".vaciarChat").click(async function (e) {
+                        e.preventDefault();
+                        const id = $(this).data("id");
+                        const data = await fetch(`/project/${id}`, {
+                            method: "delete"
+                        });
+                        const res = await data.json();
+                        if (res.estado) {
+                            window.location.href = `/project/${id}`;
+                        } else {
+                            console.log(res);
+                        }
+                    });
+                </script>

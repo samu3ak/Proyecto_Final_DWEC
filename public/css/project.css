@@ -1,0 +1,6 @@
+.chatSize {
+    height: 500px;
+    width: 600px;
+    overflow: auto;
+    word-wrap: break-word;
+}

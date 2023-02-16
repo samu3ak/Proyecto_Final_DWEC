@@ -19,6 +19,7 @@ mongoose.connect(uri,
 
 
 const indexRouter = require('./routes/index');
+const projectRouter = require("./routes/project");
 const usersRouter = require('./routes/users');
 const loginRouter = require("./routes/login");
 const registerRouter = require("./routes/register");
@@ -54,6 +55,7 @@ app.use('/news', newsRouter);
 app.use('/incidents', incidentsRouter);
 app.use('/mailbox', mailboxRouter);
 app.use('/problem', problemRouter);
+app.use('/project', projectRouter);
 
 
 
