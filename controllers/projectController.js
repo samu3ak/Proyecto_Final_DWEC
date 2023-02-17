@@ -1,6 +1,7 @@
 const Proyecto = require("../models/proyectos");
 const Mensaje = require("../models/mensaje");
 const Tarea = require("../models/tarea");
+const mongoose = require("mongoose");
 
 exports.project_get = async (req, res) => {
     const id = req.params.id;
@@ -103,9 +104,10 @@ exports.project_task_post = async (req, res) => {
 
 exports.project_task_put = async (req, res) => {
     const body = req.body;
+    const id = new mongoose.Types.ObjectId(body.id);
     try {
         const tareaEditar = await Tarea.findByIdAndUpdate(
-            body.id, {
+            id, {
             estado: body.newStatus
         }, { useFindAndModify: false }
         );
@@ -123,8 +125,7 @@ exports.project_task_put = async (req, res) => {
 };
 
 exports.project_task_delete = async (req, res) => {
-    const id = req.params.id;
-    console.log(id);
+    const id = new mongoose.Types.ObjectId(req.params.id);
     try {
         const tareaEliminar = await Tarea.findByIdAndDelete(id);
         if (!tareaEliminar) {

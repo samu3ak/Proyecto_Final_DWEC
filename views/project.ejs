@@ -2,7 +2,7 @@
     <link rel="stylesheet" href="/css/project.css">
     </head>
 
-    <body class="principal proyectos">
+    <body class="principal proyectos" data-id="<%=proyecto.id%>">
 
         <%- include("template/header.ejs", {tituloWeb:"Inicio"})%>
             <main class="container-fluid mainprojects">
@@ -155,7 +155,7 @@
                     $(".botonTarea").click(async function (e) {
                         e.preventDefault();
                         const id = $(this).data("id");
-                        const projectId = $(".vaciarChat").data("id");
+                        const projectId = $("body").data("id");
                         const status = $(this).data("status");
                         var newStatus = "";
                         if (status == "pending") {
