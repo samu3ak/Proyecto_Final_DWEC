@@ -1,4 +1,5 @@
 .principal,
+.proyectos,
 .login,
 .register,
 .usuarios,
@@ -7,14 +8,16 @@
   height: 100%;
   display: block;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.25); }
+  background-color: rgba(0, 0, 0, 0.25);
+}
 
 .contabilidad {
   width: 100%;
   height: 100%;
   display: block;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.8); }
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
 .principal::after {
   content: "";
@@ -28,7 +31,23 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  z-index: -1; }
+  z-index: -1;
+}
+
+.proyectos::after {
+  content: "";
+  background: url("../img/deathnegro.jpg");
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;
+  z-index: -1;
+}
 
 .login::after {
   content: "";
@@ -42,7 +61,8 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  z-index: -1; }
+  z-index: -1;
+}
 
 .register::after {
   content: "";
@@ -56,7 +76,8 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  z-index: -1; }
+  z-index: -1;
+}
 
 .usuarios::after {
   content: "";
@@ -70,7 +91,8 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  z-index: -1; }
+  z-index: -1;
+}
 
 .contabilidad::after {
   content: "";
@@ -84,7 +106,8 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  z-index: -1; }
+  z-index: -1;
+}
 
 .incidencias::after {
   content: "";
@@ -98,7 +121,8 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  z-index: -1; }
+  z-index: -1;
+}
 
 .noticias::after {
   content: "";
@@ -112,7 +136,8 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  z-index: -1; }
+  z-index: -1;
+}
 
 .buzon::after {
   content: "";
@@ -126,18 +151,22 @@
   background-repeat: no-repeat;
   background-position: 50% 0;
   background-size: cover;
-  z-index: -1; }
+  z-index: -1;
+}
 
 main,
 .mainusuarios,
 .mainwallet, .mainincidents, .mainnews, .mainmailbox {
-  min-height: 85vh; }
+  min-height: 85vh;
+}
 
-.mainlogin,
+.mainlogin, .mainprojects,
 .mainregister {
-  min-height: 100vh; }
+  min-height: 100vh;
+}
 
 textarea {
-  resize: none; }
+  resize: none;
+}
 
 /*# sourceMappingURL=style.css.map */

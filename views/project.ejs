@@ -2,12 +2,12 @@
     <link rel="stylesheet" href="/css/project.css">
     </head>
 
-    <body class="principal">
+    <body class="principal proyectos">
 
         <%- include("template/header.ejs", {tituloWeb:"Inicio"})%>
-            <main class="container-fluid mb-5">
+            <main class="container-fluid mb-5 mainprojects">
                 <div class="row">
-                    <div class="col-6 text-center bg-info">
+                    <div class="col-6 text-center">
                         <h1>Tareas</h1>
                         <table class="table m-5">
                             <thead class="thead-dark">
@@ -31,10 +31,10 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="col-6 bg-info">
+                    <div class="col-6">
                         <h1 class="text-center">Chat</h1>
                         <div class="row justify-content-center">
-                            <div class="col-12 chatSize bg-white border border-2 border-primary rounded">
+                            <div class="col-12 chatSize bg-secondary border border-2 border-dark rounded">
                                 <div class="row p-3">
                                     <% arrayMensajes.forEach(mensaje=> { %>
                                         <div class="col-12 mt-2 mensaje bg-warning rounded">
@@ -85,7 +85,7 @@
                 </div>
                 </div>
             </main>
-            <%- include("template/footer.ejs")%>
+            <%- include("template/footer nfixed.ejs")%>
                 <script>
                     $(document).ready(function () {
                         $(".chatSize").animate({ scrollTop: 99999 }, 100);
