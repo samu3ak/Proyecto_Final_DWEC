@@ -17,10 +17,19 @@ router.get("/*", (req, res, next) => {
 // GET de la página problem
 router.get("/:id", projectController.project_get);
 
+router.get("/:id/crearTarea", projectController.project_task_get);
+
 // POST mensaje de la página
 router.post("/:id", projectController.project_message_post);
 
+router.post("/:id/crearTarea", projectController.project_task_post);
+
+// PUT tarea página
+router.put("/:id", projectController.project_task_put);
+
 // DELETE mensajes de la página
 router.delete("/:id", projectController.project_message_delete);
+
+router.delete("/:id/task/:id", projectController.project_task_delete);
 
 module.exports = router;
