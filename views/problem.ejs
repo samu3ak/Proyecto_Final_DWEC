@@ -27,9 +27,13 @@
                                 name="remitente" readonly="readonly" value="<%=usuario.nombre%>">
                         </div>
                         <div class="row justify-content-center">
-                            <button type="submit" class="btn btn-success mt-5 buttonFormat me-5">Enviar Correo</button>
-
-                            <a class="btn btn-success mt-5 buttonFormat" href="/">Volver</a>
+                            <div class="col-12 col-sm-6 text-center">
+                                <button type="submit" class="btn btn-success mt-5 buttonFormat me-md-5 me-lg-5 me-xl-5">Enviar
+                                    Correo</button>
+                            </div>
+                            <div class="col-12 col-sm-6 text-center">
+                                <a class="btn btn-success mt-5 buttonFormat" href="/">Volver</a>
+                            </div>
                             <%if (error){%>
                                 <p class="text-center mt-4 p-1 bg-danger">Rellena todos los campos correctamente</p>
                                 <%}%>
