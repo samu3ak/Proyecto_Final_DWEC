@@ -23,9 +23,13 @@
                                 placeholder="Tu contraseña" name="password">
                         </div>
                         <div class="row justify-content-center">
-                            <button type="submit" class="btn btn-success mt-5 buttonFormat me-5">Iniciar Sesión</button>
-
-                            <a class="btn btn-success mt-5 buttonFormat" href="/register">Crear Usuario</a>
+                            <div class="col-12 col-sm-6 text-center">
+                                <button type="submit" class="btn btn-success mt-5 buttonFormat me-sm-0 me-md-5">Iniciar
+                                    Sesión</button>
+                            </div>
+                            <div class="col-12 col-sm-6 text-center">
+                                <a class="btn btn-success mt-5 buttonFormat" href="/register">Crear Usuario</a>
+                            </div>
                             <%if (error){%>
                                 <p class="text-center mt-3 p-1 bg-danger">Usuario o contraseña incorrectos</p>
                                 <%}%>
@@ -34,4 +38,4 @@
                 </div>
             </div>
         </main>
-        <%- include("template/footer.ejs")%>
+        <%- include("template/footerfixed.ejs")%>

@@ -39,10 +39,13 @@
                             </select>
                         </div>
                         <div class="row justify-content-center">
-                            <button type="submit" class="btn btn-secondary mt-5 buttonFormat me-5">Completar
-                                registro</button>
-
-                            <a class="btn btn-secondary mt-5 buttonFormat" href="/">Volver a Inicio</a>
+                            <div class="col-12 col-sm-6 text-center">
+                                <button type="submit" class="btn btn-secondary mt-5 buttonFormat me-sm-0 me-md-5 me-lg-5 me-xl-5">Completar
+                                    registro</button>
+                            </div>
+                            <div class="col-12 col-sm-6 text-center">
+                                <a class="btn btn-secondary mt-5 buttonFormat" href="/">Volver a Inicio</a>
+                            </div>
                             <%if (error){%>
                                 <p class="text-center mt-3 p-1 bg-danger">Rellena los campos necesarios/Ese nombre de
                                     usuario ya existe</p>
