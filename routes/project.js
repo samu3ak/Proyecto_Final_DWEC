@@ -30,6 +30,6 @@ router.put("/:id", projectController.project_task_put);
 // DELETE mensajes de la página
 router.delete("/:id", projectController.project_message_delete);
 
-router.delete("/:id/task/:id", projectController.project_task_delete);
+router.delete("/:projectId/task/:id", projectController.project_task_delete);
 
 module.exports = router;

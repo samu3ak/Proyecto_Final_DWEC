@@ -1,0 +1,64 @@
+<%- include("template/head.ejs", {tituloWeb})%>
+    <link rel="stylesheet" href="/css/register.css">
+    </head>
+
+    <body class="login">
+        <main class="container-fluid mainlogin">
+
+            <div class="container">
+                <div class="row justify-content-center containerFormat">
+                    <form id="editar" class="rounded bg-dark p-4 text-white loginFormat align-self-center"
+                        data-id="<%=usuarioEditar.id%>">
+                        <div class="mt-2 text-center">
+                            <h1 class="display-6">Editar usuario</h1>
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="nombreproyecto" class="form-label">Nombre del usuario</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Nombre..." name="nombre"
+                                value="<%=usuarioEditar.nombre%>">
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="nombreproyecto" class="form-label">Nombre real del usuario</label>
+                            <input type="text" class="form-control" id="nombreReal" placeholder="Nombre real..." name="nombreReal"
+                                value="<%=usuarioEditar.nombreReal%>">
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="tipo" class="form-label">Apellidos del usuario</label>
+                            <input type="text" class="form-control" id="apellidos" placeholder="Apellidos..."
+                                name="apellidos" value="<%=usuarioEditar.apellidos%>">
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="tipo" class="form-label">Contraseña del usuario</label>
+                            <input type="text" class="form-control" id="password" placeholder="Contraseña..."
+                                name="password" value="<%=usuarioEditar.password%>">
+                        </div>
+                        <div class="mb-3 pt-4 ps-5 pe-5">
+                            <label for="exampleInputPassword1" class="form-label">Elegir Rol</label>
+                            <select class="form-select" aria-label="Default select example" name="rol">
+                                <option value="Alumno" <%if(usuarioEditar.rol=="Alumno" ){%>selected<%}%>>Alumno
+                                </option>
+                                <option value="Profesor" <%if(usuarioEditar.rol=="Profesor" ){%>selected<%}%>>Profesor
+                                </option>
+                            </select>
+                        </div>
+                        <div class="row justify-content-center">
+                            <button id="edit" type="submit" class="btn btn-success mt-5 buttonFormat me-5">Guardar
+                                cambios</button>
+                            <button id="delete" type="submit" class="btn btn-danger mt-5 buttonFormat me-5">Eliminar
+                                usuario</button>
+
+                            <a class="btn btn-success mt-5 buttonFormat" href="/users">Volver</a>
+                            <%if (locals.error){%>
+                                <p class="text-center mt-4 p-1 bg-danger">Rellena todos los campos correctamente</p>
+                                <%}%>
+                                    <%if (locals.success){%>
+                                        <p class="text-center mt-4 p-1 bg-success">Usuario editado satisfactoriamente
+                                        </p>
+                                        <%}%>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <%- include("template/footer.ejs")%>
+            <script src="/js/edit_delete_user.js"></script>

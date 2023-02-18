@@ -17,4 +17,12 @@ router.get("/*", (req, res, next) => {
 /* GET users listing. */
 router.get('/', usersController.users);
 
+router.get("/:id", usersController.users_edit_get);
+
+// PUT Users
+router.put("/:id", usersController.users_edit_put);
+
+// DELETE Users
+router.delete("/:id", usersController.users_edit_delete);
+
 module.exports = router;
