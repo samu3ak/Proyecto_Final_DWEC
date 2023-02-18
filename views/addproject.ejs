@@ -39,18 +39,23 @@
                                 name="horas">
                         </div>
                         <div class="row justify-content-center">
-                            <button type="submit" class="btn btn-success mt-5 buttonFormat me-5">Guardar
-                                Proyecto</button>
+                            <div class="col-12 col-sm-12 col-md-9 col-lg-6 text-center">
+                                <button type="submit"
+                                    class="btn btn-success mt-5 buttonFormat me-md-0 me-lg-5 me-xl-5">Guardar
+                                    Proyecto</button>
 
-                            <a class="btn btn-success mt-5 buttonFormat" href="/">Volver</a>
-                            <%if (error){%>
-                                <p class="text-center mt-4 p-1 bg-danger">Rellena todos los campos correctamente</p>
-                                <%}%>
-                                    <%if (success){%>
-                                        <p class="text-center mt-4 p-1 bg-success">Proyecto creado satisfactoriamente
-                                        </p>
-                                        <%}%>
-                        </div>
+                                <div class="col-12 col-sm-12 col-md-9 col-lg-6 text-center">
+                                    <a class="btn btn-success mt-5 buttonFormat" href="/">Volver</a>
+                                </div>
+                                <%if (error){%>
+                                    <p class="text-center mt-4 p-1 bg-danger">Rellena todos los campos correctamente</p>
+                                    <%}%>
+                                        <%if (success){%>
+                                            <p class="text-center mt-4 p-1 bg-success">Proyecto creado
+                                                satisfactoriamente
+                                            </p>
+                                            <%}%>
+                            </div>
                     </form>
                 </div>
             </div>

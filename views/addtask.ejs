@@ -3,6 +3,7 @@
     </head>
 
     <body class="login">
+        
         <main class="container-fluid mainlogin">
 
             <div class="container">
@@ -22,9 +23,16 @@
                                 name="texto">
                         </div>
                         <div class="row justify-content-center">
-                            <button type="submit" class="btn btn-success mt-5 buttonFormat me-5">Subir Tarea</button>
+                            <div class="col-12 col-sm-12 col-md-9 col-lg-6 text-center">
 
-                            <a class="btn btn-success mt-5 buttonFormat" href="/project/<%=proyecto.id%>">Volver</a>
+
+                                <button type="submit"
+                                    class="btn btn-success mt-5 buttonFormat me-md-0 me-lg-5 me-xl-5">Subir
+                                    Tarea</button>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-9 col-lg-6 text-center">
+                                <a class="btn btn-success mt-5 buttonFormat" href="/project/<%=proyecto.id%>">Volver</a>
+                            </div>
                             <%if (locals.error){%>
                                 <p class="text-center mt-4 p-1 bg-danger">Rellena todos los campos correctamente</p>
                                 <%}%>

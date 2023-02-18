@@ -7,9 +7,9 @@
         <%- include("template/header.ejs", {tituloWeb:"Inicio"})%>
             <main class="container-fluid mainprojects">
                 <div class="row">
-                    <div class="col-6 text-center ps-5">
+                    <div class="col-12 col-sm-12 col-md-9 col-lg-6 text-center ps-5">
                         <h1>Tareas</h1>
-                        <div class="row">
+                        <div class="row me-0">
                             <a href="/project/<%=proyecto.id%>/crearTarea" class="btn btn-primary mb-1">Agregar nueva
                                 tarea</a>
                         </div>
@@ -71,7 +71,7 @@
                                 <!--Aquí acaba los condicionales-->
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-12 col-sm-12 col-md-9 col-lg-6">
                         <h1 class="text-center">Chat</h1>
                         <div class="row justify-content-center">
                             <div class="col-12 chatSize bg-secondary border border-2 border-dark rounded">
