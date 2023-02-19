@@ -1,1 +1,9 @@
 # Proyecto_Final_DWEC
+
+En este Proyecto Final de Desarrollo Web Entorno Cliente, los autores Samuel Bolivar y David Casado, han decicido hacer una aplicación web de una Desarrolladora de Videojuegos que permita gestionar las diferentes tareas y actividades de la empresa gracias al uso de NODEJS,MONGODB,EXPRESS y otro tipo de herramientas de Diseño de Interfaces como son: BOOTSTRAP y SASS para hacer una aplicación web responsive. Adjuntando dos documentos PDF para facilitar su explicacion(Diagrama de Flujo y Explicación Proyecto Final Cliente).
+
+Por medio de esta aplicación web, se podrá observar la creación de un servidor local donde se simula las diferentes funciones y herramientas que puede tener nuestra aplicación para facilitar o mejorar la actividad de nuestra desarrolladora favorita de videojuegos "KOJIMA PRODUCTIONS". Hemos elegido implementar un sistema de mensajes en cada proyecto, así como un gestor de tareas, sistema de alertas, control de contabilidad,... que permita a dos tipos de Usuarios diferentes hacer diferentes tipos de funciones dependiendo de su rol.
+
+En el desarrollo de esta aplicación web, hemos usado 8 entidades con sus respectivos atributos que se encuentran introducidos en la base de datos no relacional MONGODB, permitiendo aprender y gestionar nuestra aplicación para poder aprender lo máximo posible mediante el MODELO VISTA CONTROLADOR.
+
+Para finalizar, indicar que el contraste, foto y color de la pagina no ha sido elegido al azar, sino que tiene una finalidad de ser lo más fiel al autor. Estos colores dan una sensación de misterio, intriga, confusión,...como en sus juegos. No obstante, para futuras revisiones, se cambiaran los colores a unos más accesibles y utiles para todo tipo de usuarios, solamente quisimos ser fiel al autor en su primera fase del proyecto.
