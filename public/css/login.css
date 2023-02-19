@@ -1,12 +1,14 @@
-.containerFormat{
-    height: 700px;
+.containerFormat {
+  height: 700px;
 }
 
-.loginFormat{
-    width: 600px;
-    height: 450px;
+.loginFormat {
+  width: 600px;
+  height: 450px;
 }
 
-.buttonFormat{
-    width: 200px;
+.buttonFormat {
+  width: 200px;
 }
+
+/*# sourceMappingURL=login.css.map */

@@ -1,12 +1,14 @@
 .containerFormat {
-    height: 880px;
+  height: 700px;
 }
 
-.registerFormat {
-    width: 600px;
-    height: 780px;
+.loginFormat {
+  width: 600px;
+  height: 450px;
 }
 
 .buttonFormat {
-    width: 200px;
+  width: 200px;
 }
+
+/*# sourceMappingURL=register.css.map */

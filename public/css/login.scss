@@ -1,29 +1,12 @@
-.principal {
-    width: 100%;
-    height: 100%;
-    display: block;
-    position: relative;
-}
-.principal::after {
-    content: "";
-    background: url('../img/kojima.jpg');
-    opacity: 0.4;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    background-repeat: no-repeat;
-    background-position: 50% 0;
-    background-size: cover;
-    z-index: -1;
+.containerFormat{
+    height: 700px;
 }
 
-
-
-main {
-    min-height: 85vh;
+.loginFormat{
+    width: 600px;
+    height: 450px;
 }
-.mainlogin {
-    min-height: 100vh;
+
+.buttonFormat{
+    width: 200px;
 }
